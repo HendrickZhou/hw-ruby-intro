@@ -48,11 +48,15 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+    return "Hello, #{name}"
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+    head = s[0]
+    unless head == 'a' || head == 'e' || head == 'i' || head == 'o' || head == 'u' || head == 'A' || head == 'E' || head == 'I' || head == 'O' || head == 'U'
+        return true
+    end
+    return false
 end
 
 def binary_multiple_of_4? s

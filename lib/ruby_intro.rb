@@ -3,15 +3,46 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+    sum = 0
+    if arr.empty? 
+        return sum
+    end
+    arr.each {|a| sum += a}
+    return sum
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+    if arr.empty?
+        return 0
+    elsif arr.length == 1
+        return arr[0]
+    else
+        min = arr.min
+        max1 = max2 = min
+        arr.each do |a|
+            if a > max1
+                max2 = max1
+                max1 = a
+            elsif a > max2 and a <= max1
+                max2 = a
+            end
+        end
+        return max1 + max2
+    end
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+    if arr.empty?
+        return false
+    end
+    set = Set.new
+    arr.each do |a|
+        if set.include?(n-a) 
+            return true
+        end
+        set << a
+    end
+    return false
 end
 
 # Part 2

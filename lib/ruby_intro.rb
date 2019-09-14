@@ -52,15 +52,19 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-    head = s[0]
-    unless head == 'a' || head == 'e' || head == 'i' || head == 'o' || head == 'u' || head == 'A' || head == 'E' || head == 'I' || head == 'O' || head == 'U'
+    if s.empty? || s.match(/\b[aeiouAEIOU][a-z]*/) || s.match(/[^a-zA-Z][a-z]*/)
+        return false
+    else
         return true
     end
-    return false
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+    if !s.empty? && (s.match(/^[10]*00$/) || s.match(/^0*$/))
+        return true
+    else
+        return false
+    end
 end
 
 # Part 3
